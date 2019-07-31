@@ -3,10 +3,15 @@
 
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class Bee {
-    private static Random rand = new Random();
-    private static Scanner in = new Scanner(System.in);
+    private Random rand = new Random();
+    private Scanner in = new Scanner(System.in);
+    private Timer timer = new Timer();
     
     private String name; // <= 12 chars
     private int strength; //between 0 and 100
@@ -30,7 +35,7 @@ public class Bee {
     /** method that makes the bee the user is playing with.
      * @return the bee
      */
-    private static Bee generateBee() {
+    public Bee generateBee() {
         String n; //temp storage for the name
         String temp1;
     
@@ -80,8 +85,29 @@ public class Bee {
     
     }
     
-    private void event0() {
     
+    //TODO: move the events into their own separate file
+    /**
+     * in this event, the bee encounters a bear in its beehive.
+     * User has 5 seconds to decide if bee flies away or stays.
+     */
+    private static void event0() {
+        
+        // REFERENCE: https://stackoverflow.com/questions/2258066/java-run-a-function-after-a-specific-number-of-seconds
+        // When your program starts up
+        ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+
+// then, when you want to schedule a task
+        Runnable task = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Time is up!");
+            }
+        };
+        executor.schedule(task, 5, TimeUnit.SECONDS);
+
+// and finally, when your program wants to exit
+        executor.shutdown();
     }
     
     private void event1() {
@@ -100,17 +126,18 @@ public class Bee {
     
     }
     
+    /*
     public static void main(String[] args) {
         System.out.println("Welcome to the ~~BEE SIMULATOR~~ ");
         
         Bee bee = generateBee();
-        System.out.println("Yay! Your bee is all generated and ready to play!");
+        System.out.println("/nYay! Your bee is all generated and ready to play!");
         
         int random = rand.nextInt() * 5; //value from 0-4, will determine event played
+        
+        event0();
     }
+    */
     
-    /**
-     * in this event, the bee encounters a bear in its
-     */
-   
+    
 }
