@@ -15,7 +15,9 @@ public class BeeRunner {
         System.out.println("/nYay! Your bee is all generated and ready to play!");
     
         int random = rand.nextInt() * 5; //value from 0-4, will determine event played
-    
+        
+        //TODO: why doesn't this work!!!
         event0();
+        
     }
 }
