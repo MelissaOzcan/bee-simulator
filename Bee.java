@@ -17,6 +17,11 @@ public class Bee {
     private int strength; //between 0 and 100
     private int intelligence; //between 0 and 100
     
+    /**this is literally only for the runner, man*/
+    protected Bee() {
+    
+    }
+    
     /**random bee constructor*/
     private Bee(String n) {
         name = n;
@@ -91,7 +96,7 @@ public class Bee {
      * in this event, the bee encounters a bear in its beehive.
      * User has 5 seconds to decide if bee flies away or stays.
      */
-    private static void event0() {
+    protected static void event0() {
         
         // REFERENCE: https://stackoverflow.com/questions/2258066/java-run-a-function-after-a-specific-number-of-seconds
         // When your program starts up

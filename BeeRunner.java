@@ -11,13 +11,15 @@ public class BeeRunner {
         System.out.println("Welcome to the ~~BEE SIMULATOR~~ ");
     
         //TODO: figure out why this doesn't work
-        Bee bee = generateBee();
+        Bee bee = new Bee();
+        bee.generateBee();
+        
         System.out.println("/nYay! Your bee is all generated and ready to play!");
     
         int random = rand.nextInt() * 5; //value from 0-4, will determine event played
         
-        //TODO: why doesn't this work!!!
-        event0();
+        //update: ur a dumbie
+        bee.event0();
         
     }
 }
