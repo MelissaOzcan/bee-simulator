@@ -27,8 +27,9 @@ public class BeeRunner {
         //update: ur a dumbie
         bee.event0();
         
-        
         // 08/02/19 - you are the smartest person alive
+        
+        //TODO: make it so that the player can exit at anytime
     }
     
     public static void main(String[] args) {
