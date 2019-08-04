@@ -18,7 +18,7 @@ public class Bee {
     private int intelligence; //between 0 and 100
     
     /**this is literally only for the runner, man*/
-    protected Bee() {
+    Bee() {
     
     }
     
@@ -38,7 +38,7 @@ public class Bee {
     }
     
     /** method that makes the bee the user is playing with.
-     * @return the bee
+     * @return the bee!
      */
     public Bee generateBee() {
         String n; //temp storage for the name
@@ -58,32 +58,41 @@ public class Bee {
                 "Now, would you like the stats of this bee to be randomly generated? (Y/N)", n);
         temp1 = in.next();
     
+        
+        switch (temp1) {
+            // if its a "N" or a "n", the same code will execute
+            //there are no || while using a switch statement :/
+            case ("N") :
+            
+            case ("n") :
+                System.out.println("\nPlease enter a value from 0-100 for the strength and one for the intelligence," +
+                        "seperated by a space.");
+                int s = in.nextInt();
+                int i = in.nextInt();
+                while(s > 100 || s < 0) {
+                    System.out.println("\nWhoops! The value for strength is not within the bounds." +
+                            "\nPlease enter a number between 0 and 100.");
+                    s = in.nextInt();
+                }
+                while(i > 100 || i < 0) {
+                    System.out.println("\nWhoops! The value for intelligence is not within the bounds." +
+                            "\nPlease enter a number between 0 and 100.");
+                    i = in.nextInt();
+                }
     
-        //TODO: switch statement?
-        
-        if (temp1.equals("N") || temp1.equals("n")) {
-            System.out.println("\nPlease enter a value from 0-100 for the strength and one for the intelligence," +
-                    "seperated by a space.");
-            int s = in.nextInt();
-            int i = in.nextInt();
-            while(s > 100 || s < 0) {
-                System.out.println("\nWhoops! The value for strength is not within the bounds." +
-                        "\nPlease enter a number between 0 and 100.");
-                s = in.nextInt();
-            }
-            while(i > 100 || i < 0) {
-                System.out.println("\nWhoops! The value for intelligence is not within the bounds." +
-                        "\nPlease enter a number between 0 and 100.");
-                i = in.nextInt();
-            }
-        
-            bee = new Bee(n, s, i);
-        } else if (temp1.equals("Y") || temp1.equals("y")) {
-            System.out.println("\nOk, the stats will be randomly generated for you.");
-            bee = new Bee(n);
-        } else {
-            System.out.println("Since you have not entered either a 'Y' or an 'N', I'm just gonna randomly generate the bee. ");
-            bee = new Bee(n);
+                bee = new Bee(n, s, i);
+                break;
+            
+            case "Y" :
+            
+            case "y":
+                System.out.println("\nOk, the stats will be randomly generated for you.");
+                bee = new Bee(n);
+                break;
+                
+            default:
+                System.out.println("Since you have not entered either a 'Y' or an 'N', I'm just gonna randomly generate the bee. ");
+                bee = new Bee(n);
         }
         
         return bee;
@@ -96,7 +105,7 @@ public class Bee {
      * in this event, the bee encounters a bear in its beehive.
      * User has 5 seconds to decide if bee flies away or stays.
      */
-    protected static void event0() {
+    protected void event0() {
         
         // REFERENCE: https://stackoverflow.com/questions/2258066/java-run-a-function-after-a-specific-number-of-seconds
         // When your program starts up
