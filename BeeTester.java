@@ -5,7 +5,9 @@ public class BeeTester {
     
         //TODO: test the creation of the bee object
         
-        //TODO: test the events one by one
+        //TODO: test event0
+        
+        //TODO: test event1
         
     }
 }

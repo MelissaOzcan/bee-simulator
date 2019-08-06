@@ -124,7 +124,35 @@ public class Bee {
         executor.shutdown();
     }
     
+    // in this event, your bee dies. how sad.
     private void event1() {
+        System.out.println("~~bzzzz bzzzz~~" +
+                "\nOh look! Is that your queen bee flying by? It is! Would you like to bzzzz over to her? (Y/N)");
+        
+        String input = in.nextLine();
+        
+        switch (input) {
+            case "N":
+            
+            case "n" :
+                System.out.println("While flying away from your queen bee, you accidentally flew into a bear's mouth. " +
+                        "\nSorry, you are dead.");
+                System.exit(1);
+                
+                break;
+                
+            default:
+                System.out.println("Wow! What an invalid answer! I'm just flying you over anyways.");
+           
+            case "Y" :
+    
+            case "y" :
+                System.out.println("You are flying over to your one and only queen bee!" +
+                        "\nUnfortunately, the buffest bee in the colony also had his eyes on her..." +
+                        "\n Sorry, he ate you. You're dead.");
+                System.exit(1);
+                break;
+        }
     
     }
     
