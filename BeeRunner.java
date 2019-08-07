@@ -5,35 +5,56 @@ import java.util.Scanner;
 import java.util.Timer;
 
 public class BeeRunner {
-    private static Random rand = new Random();
-    private static Scanner in = new Scanner(System.in);
-    private static Timer timer = new Timer();
     
-    private BeeRunner() {
+    public static void main(String[] args) {
+    
+        Random rand = new Random();
+        Scanner in = new Scanner(System.in);
+        Timer timer = new Timer();
+        
         System.out.println("Welcome to the ~~BEE SIMULATOR~~ ");
         for (int i = 0; i < 20; i++)
             System.out.print("\uD83D\uDC1D"); //emojis
         System.out.println();
-        
+    
         Bee bee = new Bee();
         bee.generateBee();
-    
         System.out.println("\nYay! Your bee is all generated and ready to play!");
     
-        int random = rand.nextInt() * 5; //value from 0-4, will determine event played
+        //TODO: while loop this??? to make for user input to leave???
         
-        //TODO: the switch statement that decides which event will run
+        /*
+        possibility:
         
-        //update: ur a dumbie
-        bee.event0();
+        while(true)
+            if (s.equals("quit")
+                System.exit(1);
         
-        // 08/02/19 - you are the smartest person alive
-        
-        //TODO: make it so that the player can exit at anytime
-    }
+         */
+        int random = rand.nextInt(5); //value from 0-4, will determine event played
+        System.out.println(random);
+        switch (random) {
+            case 0:
+                bee.event0();
+                break;
+            case 1:
+                bee.event1();
+                break;
+            case 2:
+                bee.event2();
+                break;
+            case 3:
+                bee.event3();
+                break;
+            case 4:
+                bee.event4();
+                break;
+        }
     
-    public static void main(String[] args) {
-        //TODO: figure out why you didnt just put all the code in main?!!?!?!?
-        new BeeRunner();
+        //update: ur a dumbie
+       
+        // 08/02/19 - you are the smartest person alive
+    
+        //TODO: make it so that the player can exit at anytime
     }
 }
