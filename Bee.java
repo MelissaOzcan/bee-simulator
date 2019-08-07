@@ -18,7 +18,8 @@ public class Bee {
     private int intelligence; //between 0 and 100
     
     /**this is literally only for the runner, man*/
-    Bee() {
+    @SuppressWarnings("WeakerAccess")           //https://stackoverflow.com/questions/41716196/how-to-disable-access-can-be-package-private-message-in-intellij
+    protected Bee() {
     
     }
     
@@ -40,7 +41,8 @@ public class Bee {
     /** method that makes the bee the user is playing with.
      * @return the bee!
      */
-    public Bee generateBee() {
+    @SuppressWarnings("WeakerAccess")
+    protected Bee generateBee() {
         String n; //temp storage for the name
         String temp1;
     
@@ -100,11 +102,12 @@ public class Bee {
     }
     
     
-    //TODO: move the events into their own separate file
+    //TODO: move the events into their own separate files
     /**
      * in this event, the bee encounters a bear in its beehive.
      * User has 5 seconds to decide if bee flies away or stays.
      */
+    @SuppressWarnings("WeakerAccess")
     protected void event0() {
         
         // REFERENCE: https://stackoverflow.com/questions/2258066/java-run-a-function-after-a-specific-number-of-seconds
@@ -125,7 +128,8 @@ public class Bee {
     }
     
     // in this event, your bee dies. how sad.
-    private void event1() {
+    @SuppressWarnings("WeakerAccess")
+    protected void event1() {
         System.out.println("~~bzzzz bzzzz~~" +
                 "\nOh look! Is that your queen bee flying by? It is! Would you like to bzzzz over to her? (Y/N)");
         
@@ -137,7 +141,7 @@ public class Bee {
             case "n" :
                 System.out.println("While flying away from your queen bee, you accidentally flew into a bear's mouth. " +
                         "\nSorry, you are dead.");
-                System.exit(1);
+                System.exit(1); //code has exited w/ no errors
                 
                 break;
                 
@@ -148,7 +152,7 @@ public class Bee {
     
             case "y" :
                 System.out.println("You are flying over to your one and only queen bee!" +
-                        "\nUnfortunately, the buffest bee in the colony also had his eyes on her..." +
+                        "\nUnfortunately, the most buff bee in the colony also had his eyes on her..." +
                         "\n Sorry, he ate you. You're dead.");
                 System.exit(1);
                 break;
@@ -156,30 +160,26 @@ public class Bee {
     
     }
     
-    private void event2() {
+    
+    /**
+     * in this event, mr. respass cares for you and either your strength or stats go up
+     */
+    @SuppressWarnings("WeakerAccess")
+    protected void event2() {
+        System.out.println("welcome to event 2");
+    }
+    
+    //TODO: decide event
+    @SuppressWarnings("WeakerAccess")
+    protected void event3() {
+        System.out.println("welcome to event 3");
     
     }
     
-    private void event3() {
+    //TODO: decide event
+    @SuppressWarnings("WeakerAccess")
+    protected void event4() {
+        System.out.println("welcome to event 4");
     
     }
-    
-    private void event4() {
-    
-    }
-    
-    /*
-    public static void main(String[] args) {
-        System.out.println("Welcome to the ~~BEE SIMULATOR~~ ");
-        
-        Bee bee = generateBee();
-        System.out.println("/nYay! Your bee is all generated and ready to play!");
-        
-        int random = rand.nextInt() * 5; //value from 0-4, will determine event played
-        
-        event0();
-    }
-    */
-    
-    
 }
