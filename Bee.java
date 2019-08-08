@@ -14,8 +14,8 @@ public class Bee {
     private Timer timer = new Timer();
     
     private String name; // <= 12 chars
-    private int strength; //between 0 and 100
-    private int intelligence; //between 0 and 100
+    protected int strength; //between 0 and 100
+    protected int intelligence; //between 0 and 100
     
     /**this is literally only for the runner, man*/
     @SuppressWarnings("WeakerAccess")           //https://stackoverflow.com/questions/41716196/how-to-disable-access-can-be-package-private-message-in-intellij
@@ -133,27 +133,29 @@ public class Bee {
         System.out.println("~~bzzzz bzzzz~~" +
                 "\nOh look! Is that your queen bee flying by? It is! Would you like to bzzzz over to her? (Y/N)");
         
-        String input = in.nextLine();
+        String input = in.next();
         
         switch (input) {
             case "N":
             
             case "n" :
                 System.out.println("While flying away from your queen bee, you accidentally flew into a bear's mouth. " +
-                        "\nSorry, you are dead.");
-                System.exit(1); //code has exited w/ no errors
+                        "\nSorry, you are dead." +
+                        "\n\nThank you for playing!");
+                System.exit(1); //code has exited with no errors
                 
                 break;
                 
             default:
-                System.out.println("Wow! What an invalid answer! I'm just flying you over anyways.");
+                System.out.printf("Wow! What an invalid answer! Your answer was %s. I'm just flying you over anyways :)", input);
            
             case "Y" :
     
             case "y" :
-                System.out.println("You are flying over to your one and only queen bee!" +
+                System.out.println("\nYou are flying over to your one and only queen bee!" +
                         "\nUnfortunately, the most buff bee in the colony also had his eyes on her..." +
-                        "\n Sorry, he ate you. You're dead.");
+                        "\nSorry, he ate you. You're dead." +
+                        "\n\nThank you for playing!");
                 System.exit(1);
                 break;
         }
@@ -162,11 +164,17 @@ public class Bee {
     
     
     /**
-     * in this event, mr. respass cares for you and either your strength or stats go up
+     * in this event, mr. respass cares for you and either your strength or intelligence go up
      */
     @SuppressWarnings("WeakerAccess")
-    protected void event2() {
-        System.out.println("welcome to event 2");
+    protected void event2(Bee bee) {
+        System.out.println("Your beekeeper, Mr. TBD, noticed you were a little under the weather recently.");
+        
+        boolean b = rand.nextBoolean();
+        System.out.println(b ? "You have gotten a boost to your intelligence!" : "You have gotten a boost to your strength!");
+        int d = b ? bee.intelligence : bee.strength += 5; //TODO: its bedtime please
+    
+        System.out.printf("Your new stats are: \nIntelligence: %d \nStrength: %d", bee.intelligence, bee.strength);
     }
     
     //TODO: decide event

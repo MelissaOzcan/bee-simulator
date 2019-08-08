@@ -20,6 +20,8 @@ public class BeeRunner {
         Bee bee = new Bee();
         bee.generateBee();
         System.out.println("\nYay! Your bee is all generated and ready to play!");
+        
+        bee.event1();
     
         //TODO: while loop this??? to make for user input to leave???
         
@@ -41,7 +43,7 @@ public class BeeRunner {
                 bee.event1();
                 break;
             case 2:
-                bee.event2();
+                bee.event2(bee);
                 break;
             case 3:
                 bee.event3();
