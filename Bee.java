@@ -103,6 +103,8 @@ public class Bee {
     
     
     //TODO: move the events into their own separate files
+    
+    //TODO: please finish this event it was going so well
     /**
      * in this event, the bee encounters a bear in its beehive.
      * User has 5 seconds to decide if bee flies away or stays.
@@ -168,11 +170,11 @@ public class Bee {
      */
     @SuppressWarnings("WeakerAccess")
     protected void event2(Bee bee) {
-        System.out.println("Your beekeeper, Mr. TBD, noticed you were a little under the weather recently.");
+        System.out.println("Your beekeeper, Mr. Passres, noticed you were a little under the weather recently.");
         
         boolean b = rand.nextBoolean();
         System.out.println(b ? "You have gotten a boost to your intelligence!" : "You have gotten a boost to your strength!");
-        int d = b ? bee.intelligence : bee.strength += 5; //TODO: its bedtime please
+        int boost = b ? bee.intelligence++ : bee.strength++;
     
         System.out.printf("Your new stats are: \nIntelligence: %d \nStrength: %d", bee.intelligence, bee.strength);
     }
