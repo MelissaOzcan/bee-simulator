@@ -179,7 +179,7 @@ public class Bee {
         System.out.printf("Your new stats are: \nIntelligence: %d \nStrength: %d", bee.intelligence, bee.strength);
     }
     
-    //TODO: decide event
+    //you encounter someone trying to take your honey in this event
     @SuppressWarnings("WeakerAccess")
     protected void event3() {
         System.out.println("welcome to event 3");
