@@ -19,11 +19,28 @@ public class BeeRunner {
     
         Bee bee = new Bee();
         bee.generateBee();
-        System.out.println("\nYay! Your bee is all generated and ready to play!");
+        System.out.println("\nYay! Your bee is all generated and ready to play!" +
+                "Would you like to hear your bees stats? (Y/N)");
+        
+        String s = in.nextLine();
+        
+        if (s.equals("Y") || s.equals("y")) {
+            System.out.printf("OK! Here are your bees stats:" +
+                    "\nName: %s" +
+                    "\nIntelligence: %d" +
+                    "\nStrength: %d",
+                    bee.name, bee.intelligence, bee.strength);
+            
+        }else if (s.equals("N") || s.equals("n")) {
+            System.out.println("Very cool. Live your bee-st life.");
+        }else {
+            System.out.println("Wow! I sure love an invalid answer. No stats for you!!!");
+        }
         
         int numOfRounds = 1; //keeps track of events played
         
         bee.event2(bee);
+        bee.event1();
         
         while (true) {
             
