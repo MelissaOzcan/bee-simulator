@@ -13,7 +13,7 @@ public class Bee {
     private Scanner in = new Scanner(System.in);
     private Timer timer = new Timer();
     
-    private String name; // <= 12 chars
+    protected String name; // <= 12 chars
     protected int strength; //between 0 and 100
     protected int intelligence; //between 0 and 100
     
@@ -60,43 +60,39 @@ public class Bee {
                 "Now, would you like the stats of this bee to be randomly generated? (Y/N)", n);
         temp1 = in.next();
     
-        
+    
         switch (temp1) {
             // if its a "N" or a "n", the same code will execute
             //there are no || while using a switch statement :/
-            case ("N") :
-            
-            case ("n") :
+            case ("N"):
+        
+            case ("n"):
                 System.out.println("\nPlease enter a value from 0-100 for the strength and one for the intelligence," +
                         "seperated by a space.");
                 int s = in.nextInt();
                 int i = in.nextInt();
-                while(s > 100 || s < 0) {
+                while (s > 100 || s < 0) {
                     System.out.println("\nWhoops! The value for strength is not within the bounds." +
                             "\nPlease enter a number between 0 and 100.");
                     s = in.nextInt();
                 }
-                while(i > 100 || i < 0) {
+                while (i > 100 || i < 0) {
                     System.out.println("\nWhoops! The value for intelligence is not within the bounds." +
                             "\nPlease enter a number between 0 and 100.");
                     i = in.nextInt();
                 }
-    
+            
                 bee = new Bee(n, s, i);
                 break;
-            
-            case "Y" :
-            
-            case "y":
-                System.out.println("\nOk, the stats will be randomly generated for you.");
+        
+            //either "Y", "y", or invalid answer
+            default:
+                if (!(temp1.equals("Y") || temp1.equals("y")))
+                    System.out.println("Since you have not entered either a 'Y' or an 'N', I'm just gonna randomly generate the bee. ");
                 bee = new Bee(n);
                 break;
-                
-            default:
-                System.out.println("Since you have not entered either a 'Y' or an 'N', I'm just gonna randomly generate the bee. ");
-                bee = new Bee(n);
         }
-        
+    
         return bee;
     
     }
@@ -129,31 +125,31 @@ public class Bee {
         executor.shutdown();
     }
     
+    //TODO: make more outcomes (random generation)
     // in this event, your bee dies. how sad.
     @SuppressWarnings("WeakerAccess")
     protected void event1() {
-        System.out.println("~~bzzzz bzzzz~~" +
+        System.out.println("\n\n~~bzzzz bzzzz~~" +
                 "\nOh look! Is that your queen bee flying by? It is! Would you like to bzzzz over to her? (Y/N)");
         
         String input = in.next();
         
         switch (input) {
             case "N":
-            
-            case "n" :
+    
+            case "n":
                 System.out.println("While flying away from your queen bee, you accidentally flew into a bear's mouth. " +
                         "\nSorry, you are dead." +
                         "\n\nThank you for playing!");
                 System.exit(1); //code has exited with no errors
-                
+        
                 break;
-                
-            default:
-                System.out.printf("Wow! What an invalid answer! Your answer was %s. I'm just flying you over anyways :)", input);
-           
-            case "Y" :
     
-            case "y" :
+            //either "Y", "y", or invalid answer
+            default:
+                if (!(input.equals("Y") || input.equals("y")))
+                    System.out.printf("Wow! What an invalid answer! Your answer was %s. I'm just flying you over anyways :)", input);
+                
                 System.out.println("\nYou are flying over to your one and only queen bee!" +
                         "\nUnfortunately, the most buff bee in the colony also had his eyes on her..." +
                         "\nSorry, he ate you. You're dead." +
@@ -170,7 +166,7 @@ public class Bee {
      */
     @SuppressWarnings("WeakerAccess")
     protected void event2(Bee bee) {
-        System.out.println("Your beekeeper, Mr. Passres, noticed you were a little under the weather recently.");
+        System.out.println("\n\nYour beekeeper, Mr. Passres, noticed you were a little under the weather recently.");
         
         boolean b = rand.nextBoolean();
         System.out.println(b ? "You have gotten a boost to your intelligence!" : "You have gotten a boost to your strength!");
@@ -182,12 +178,19 @@ public class Bee {
     //you encounter someone trying to take your honey in this event
     @SuppressWarnings("WeakerAccess")
     protected void event3() {
-        System.out.println("welcome to event 3");
+        System.out.println("\n\n~~bzzzzzz bzzzzzz~~" +
+                "Oh no! You spot a human tryna take ur hunney! Do you sting them? (Y/N)");
+        String input = in.nextLine();
+        
+        switch (input) {
+            case ("Y"):
+            
+            case ("y"):
+        }
     
     }
     
     //TODO: decide event
-    //how about no
     @SuppressWarnings("WeakerAccess")
     protected void event4() {
         System.out.println("welcome to event 4");
