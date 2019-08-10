@@ -187,6 +187,7 @@ public class Bee {
     }
     
     //TODO: decide event
+    //how about no
     @SuppressWarnings("WeakerAccess")
     protected void event4() {
         System.out.println("welcome to event 4");
