@@ -23,18 +23,24 @@ public class BeeRunner {
                 "Would you like to hear your bees stats? (Y/N)");
         
         String s = in.nextLine();
-        
-        if (s.equals("Y") || s.equals("y")) {
-            System.out.printf("OK! Here are your bees stats:" +
-                    "\nName: %s" +
-                    "\nIntelligence: %d" +
-                    "\nStrength: %d",
-                    bee.name, bee.intelligence, bee.strength);
+    
+        switch (s) {
+            case "Y":
+            case "y":
+                System.out.printf("OK! Here are your bees stats:" +
+                                "\nName: %s" +
+                                "\nIntelligence: %d" +
+                                "\nStrength: %d",
+                        bee.name, bee.intelligence, bee.strength);
             
-        }else if (s.equals("N") || s.equals("n")) {
-            System.out.println("Very cool. Live your bee-st life.");
-        }else {
-            System.out.println("Wow! I sure love an invalid answer. No stats for you!!!");
+                break;
+            case "N":
+            case "n":
+                System.out.println("Very cool. Live your bee-st life.");
+                break;
+            default:
+                System.out.println("Wow! I sure love an invalid answer. No stats for you!!!");
+                break;
         }
         
         int numOfRounds = 1; //keeps track of events played
