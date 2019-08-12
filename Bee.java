@@ -30,8 +30,8 @@ public class Bee {
     /**random bee constructor*/
     private Bee(String n) {
         name = n;
-        strength = rand.nextInt() * 100;
-        intelligence = rand.nextInt() * 100;
+        strength = rand.nextInt(101);
+        intelligence = rand.nextInt(101);
     }
     
     
@@ -69,7 +69,6 @@ public class Bee {
             // if its a "N" or a "n", the same code will execute
             //there are no || while using a switch statement :/
             case ("N"):
-        
             case ("n"):
                 System.out.println("\nPlease enter a value from 0-100 for the strength and one for the intelligence," +
                         "seperated by a space.");
@@ -134,7 +133,6 @@ public class Bee {
         executor.shutdown();
     }
     
-    //TODO: make more outcomes (random generation)
     // in this event, your bee dies. how sad.
     @SuppressWarnings("WeakerAccess")
     protected void event1() {
@@ -145,20 +143,25 @@ public class Bee {
         
         switch (input) {
             case "N":
-    
             case "n":
-                System.out.println("While flying away from your queen bee, you accidentally flew into a bear's mouth. " +
-                        "\nSorry, you are dead." +
-                        "\n\nThank you for playing!");
+                int r = rand.nextInt(3);
+                switch (r) {
+                    case 0:
+                        System.out.println("\nWhile flying away from your queen bee, you accidentally flew into a bear's mouth.");
+                    case 1:
+                        System.out.println("\nYou decided to bzzzz over to a flower that sadly had pesticides in it.");
+                    case 2:
+                        System.out.println("\nWhile flying away, you bumped into a human that decided to wack you with their shoe.");
+                }
+                System.out.println("\nSorry, you are dead.\n\nThank you for playing!");
                 System.exit(1); //code has exited with no errors
-        
-                break;
-    
-            //either "Y", "y", or invalid answer
-            default:
+                
+            default:   //either "Y", "y", or invalid answer
                 if (!(input.equals("Y") || input.equals("y")))
                     System.out.printf("Wow! What an invalid answer! Your answer was %s. I'm just flying you over anyways :)", input);
-                
+    
+                //TODO: make more outcomes (random generation)
+    
                 System.out.println("\nYou are flying over to your one and only queen bee!" +
                         "\nUnfortunately, the most buff bee in the colony also had his eyes on her..." +
                         "\nSorry, he ate you. You're dead." +
@@ -177,15 +180,21 @@ public class Bee {
     protected void event2(Bee bee) {
         System.out.println("\n\nYour beekeeper, Mr. Passres, noticed you were a little under the weather recently.");
         
+        //TODO: make this code more readable pls
         boolean b = rand.nextBoolean();
         System.out.println(b ? "You have gotten a boost to your intelligence!" : "You have gotten a boost to your strength!");
         int boost = b ? bee.intelligence++ : bee.strength++;
+        
+        //the max values are 100
+        bee.intelligence = bee.intelligence % 100;
+        bee.strength = bee.strength % 100;
     
         System.out.printf("Your new stats are: \nIntelligence: %d \nStrength: %d", bee.intelligence, bee.strength);
     }
     
     //you encounter someone trying to take your honey in this event
     @SuppressWarnings("WeakerAccess")
+    //TODO: finish event plz
     protected void event3() {
         System.out.println("\n\n~~bzzzzzz bzzzzzz~~" +
                 "Oh no! You spot a human tryna take ur hunney! Do you sting them? (Y/N)");
