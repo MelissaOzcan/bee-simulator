@@ -54,13 +54,18 @@ public class BeeRunner {
             if (numOfRounds % 3 == 0) {
                 System.out.println("\nWould you like to keep playing? (Y/N)");
                 String input = in.nextLine();
-                if (input.equals("Y") || input.equals("y")) {
-                    System.out.println("\nVery cool! We will keep playing.");
-                }else if (input.equals("N") || input.equals("n")) {
-                    System.out.println("\nHow sad! Bye bye then...");
-                    System.exit(1);
-                }else {
-                    System.out.println("\nInvalid input! So that means we keep playing <3");
+                switch (input) {
+                    case "Y":
+                    case "y":
+                        System.out.println("\nVery cool! We will keep playing.");
+                        break;
+                    case "N":
+                    case "n":
+                        System.out.println("\nHow sad! Bye bye then...");
+                        System.exit(1);
+                    default:
+                        System.out.println("\nInvalid input! So that means we keep playing <3");
+                        break;
                 }
             }
             
@@ -87,6 +92,5 @@ public class BeeRunner {
         //update: ur a dumbie
     
         // 08/02/19 - you are the smartest person alive
-    
     }
 }

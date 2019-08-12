@@ -8,13 +8,17 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+@SuppressWarnings("WeakerAccess")
 public class Bee {
     private Random rand = new Random();
     private Scanner in = new Scanner(System.in);
     private Timer timer = new Timer();
     
+    @SuppressWarnings("WeakerAccess")
     protected String name; // <= 12 chars
+    @SuppressWarnings("WeakerAccess")
     protected int strength; //between 0 and 100
+    @SuppressWarnings("WeakerAccess")
     protected int intelligence; //between 0 and 100
     
     /**this is literally only for the runner, man*/
@@ -113,12 +117,17 @@ public class Bee {
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 
 // then, when you want to schedule a task
-        Runnable task = new Runnable() {
+        /*
+        ~~the code that the lambda expression replaced~~
+        
+         Runnable task = new Runnable() {
             @Override
             public void run() {
                 System.out.println("Time is up!");
             }
         };
+         */
+        Runnable task = () -> System.out.println("Time is up!"); //this is a lambda expression?!?
         executor.schedule(task, 5, TimeUnit.SECONDS);
 
 // and finally, when your program wants to exit
