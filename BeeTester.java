@@ -1,4 +1,5 @@
-//Hi! This code is for testing the Bee game! have fun!
+package bee;
+//Hi! This code is for testing the bee.Bee game! have fun!
 
 //is this really necessary?????
 
