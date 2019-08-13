@@ -1,3 +1,4 @@
+package bee;
 // Welcome to the bee simulator!!!!
 // Coded by Melissa Ozcan on 07/27/2019 - {end date}
 
@@ -202,8 +203,19 @@ public class Bee {
         
         switch (input) {
             case ("Y"):
-            
             case ("y"):
+                System.out.println("\nDid you know that by stinging something, you die?" +
+                        "\nWell, now you do." +
+                        "\nSorry, you are dead." +
+                        "\n\nThank you for playing!");
+                System.exit(1);
+            
+            //also includes "N" and "n"
+            default:
+                if (!(input.equals("N") || input.equals("n")))
+                    System.out.println("An invalid answer? Ok, seems you wont be stingin anyone today.");
+            
+                //TODO: think of something.
         }
     
     }
