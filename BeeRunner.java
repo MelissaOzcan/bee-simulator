@@ -19,35 +19,13 @@ public class BeeRunner {
         System.out.println();
     
         Bee bee = new Bee();
-        bee.generateBee();
-        System.out.println("\nYay! Your bee is all generated and ready to play!" +
-                "Would you like to hear your bees stats? (Y/N)");
+        bee = bee.generateBee();    //TODO: should the generateBee code go in the runner? feels like a runner type of ting ngl
         
-        String s = in.nextLine();
-    
-        switch (s) {
-            case "Y":
-            case "y":
-                System.out.printf("OK! Here are your bees stats:" +
-                                "\nName: %s" +
-                                "\nIntelligence: %d" +
-                                "\nStrength: %d",
-                        bee.name, bee.intelligence, bee.strength);
-            
-                break;
-            case "N":
-            case "n":
-                System.out.println("Very cool. Live your bee-st life.");
-                break;
-            default:
-                System.out.println("Wow! I sure love an invalid answer. No stats for you!!!");
-                break;
-        }
+        System.out.println("\nYay! Your bee is all generated and ready to play!");
+        
+        
         
         int numOfRounds = 1; //keeps track of events played
-        
-        bee.event2(bee);
-        bee.event1();
         
         while (true) {
             
@@ -89,7 +67,9 @@ public class BeeRunner {
                     break;
             }
             numOfRounds++;
-        }
+        } //end of while(true) loop
+        
+        
         //update: ur a dumbie
     
         // 08/02/19 - you are the smartest person alive

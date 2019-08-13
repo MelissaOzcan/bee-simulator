@@ -9,6 +9,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+//TODO:
+//TODO:
+//TODO: make it so that you have a heatlh bar so that the bee doesn't die so quickly
+
 @SuppressWarnings("WeakerAccess")
 public class Bee {
     private Random rand = new Random();
@@ -22,28 +26,36 @@ public class Bee {
     @SuppressWarnings("WeakerAccess")
     protected int intelligence; //between 0 and 100
     
-    /**this is literally only for the runner, man*/
-    @SuppressWarnings("WeakerAccess")           //https://stackoverflow.com/questions/41716196/how-to-disable-access-can-be-package-private-message-in-intellij
+    /**
+     * this is literally only for the runner, man
+     */
+    @SuppressWarnings("WeakerAccess")
+    //https://stackoverflow.com/questions/41716196/how-to-disable-access-can-be-package-private-message-in-intellij
     protected Bee() {
     
     }
     
-    /**random bee constructor*/
+    /**
+     * random bee constructor
+     */
     private Bee(String n) {
         name = n;
         strength = rand.nextInt(101);
         intelligence = rand.nextInt(101);
     }
     
-    
-    /**custom bee constructor*/
+    /**
+     * custom bee constructor
+     */
     private Bee(String n, int s, int i) {
         name = n;
         strength = s;
         intelligence = i;
     }
     
-    /** method that makes the bee the user is playing with.
+    /**
+     * method that makes the bee the user is playing with.
+     *
      * @return the bee!
      */
     @SuppressWarnings("WeakerAccess")
@@ -85,7 +97,7 @@ public class Bee {
                             "\nPlease enter a number between 0 and 100.");
                     i = in.nextInt();
                 }
-            
+    
                 bee = new Bee(n, s, i);
                 break;
         
@@ -94,6 +106,28 @@ public class Bee {
                 if (!(temp1.equals("Y") || temp1.equals("y")))
                     System.out.println("Since you have not entered either a 'Y' or an 'N', I'm just gonna randomly generate the bee. ");
                 bee = new Bee(n);
+                
+                System.out.println("\nWould you like to hear your bees stats? (Y/N)");
+                String ss = in.nextLine();
+    
+                switch (ss) {
+                    case "Y":
+                    case "y":
+                        System.out.printf("OK! Here are your bees stats:" +
+                                        "\n\tName: %s" +
+                                        "\n\tIntelligence: %d" +
+                                        "\n\tStrength: %d",
+                                bee.name, bee.intelligence, bee.strength);
+    
+                        break;
+                    case "N":
+                    case "n":
+                        System.out.println("Very cool. Live your bee-st life.");
+                        break;
+                    default:
+                        System.out.println("Wow! I sure love an invalid answer. No stats for you!!!");
+                        break;
+                }
                 break;
         }
     
@@ -105,6 +139,7 @@ public class Bee {
     //TODO: move the events into their own separate files
     
     //TODO: please finish this event it was going so well
+    
     /**
      * in this event, the bee encounters a bear in its beehive.
      * User has 5 seconds to decide if bee flies away or stays.
@@ -136,7 +171,7 @@ public class Bee {
     
     // in this event, your bee dies. how sad.
     @SuppressWarnings("WeakerAccess")
-    protected void event1() {
+    protected void event1(Bee bee) {
         System.out.println("\n\n~~bzzzz bzzzz~~" +
                 "\nOh look! Is that your queen bee flying by? It is! Would you like to bzzzz over to her? (Y/N)");
         
@@ -149,26 +184,35 @@ public class Bee {
                 switch (r) {
                     case 0:
                         System.out.println("\nWhile flying away from your queen bee, you accidentally flew into a bear's mouth.");
+                        break;
                     case 1:
                         System.out.println("\nYou decided to bzzzz over to a flower that sadly had pesticides in it.");
+                        break;
                     case 2:
                         System.out.println("\nWhile flying away, you bumped into a human that decided to wack you with their shoe.");
-                }
+                        break;
+                } //switch statements are all that ever bring me joy anymore.
+                
                 System.out.println("\nSorry, you are dead.\n\nThank you for playing!");
                 System.exit(1); //code has exited with no errors
-                
+    
             default:   //either "Y", "y", or invalid answer
                 if (!(input.equals("Y") || input.equals("y")))
                     System.out.printf("Wow! What an invalid answer! Your answer was %s. I'm just flying you over anyways :)", input);
-    
+        
                 //TODO: make more outcomes (random generation)
-    
+        
                 System.out.println("\nYou are flying over to your one and only queen bee!" +
-                        "\nUnfortunately, the most buff bee in the colony also had his eyes on her..." +
-                        "\nSorry, he ate you. You're dead." +
-                        "\n\nThank you for playing!");
-                System.exit(1);
-                break;
+                        "\nUnfortunately, the most buff bee in the colony also had his eyes on her...");
+                
+                if (bee.strength >= 50)
+                    System.out.println("Good thing you're so strong! You ate that bee!");
+                else {
+                    System.out.println("\nSorry, he ate you. You're dead." +
+                            "\n\nThank you for playing!");
+                    System.exit(1);
+                    break;
+                }
         }
     
     }
@@ -190,7 +234,7 @@ public class Bee {
         bee.intelligence = bee.intelligence % 100;
         bee.strength = bee.strength % 100;
     
-        System.out.printf("Your new stats are: \nIntelligence: %d \nStrength: %d", bee.intelligence, bee.strength);
+        System.out.printf("Your new stats are: \n\tIntelligence: %d \n\tStrength: %d", bee.intelligence, bee.strength);
     }
     
     //you encounter someone trying to take your honey in this event
@@ -209,21 +253,25 @@ public class Bee {
                         "\nSorry, you are dead." +
                         "\n\nThank you for playing!");
                 System.exit(1);
-            
-            //also includes "N" and "n"
+    
+                //also includes "N" and "n"
             default:
                 if (!(input.equals("N") || input.equals("n")))
                     System.out.println("An invalid answer? Ok, seems you wont be stingin anyone today.");
-            
+    
                 //TODO: think of something.
         }
     
     }
     
-    //TODO: decide event
+    /**
+     * in this event, you are sprayed with pesticides and either your intelligence or strength go down
+     */
     @SuppressWarnings("WeakerAccess")
     protected void event4() {
         System.out.println("welcome to event 4");
     
     }
 }
+
+//is this code too long????
