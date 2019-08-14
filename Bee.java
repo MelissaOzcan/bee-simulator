@@ -25,6 +25,8 @@ public class Bee {
     protected int strength; //between 0 and 100
     @SuppressWarnings("WeakerAccess")
     protected int intelligence; //between 0 and 100
+    @SuppressWarnings("WeakerAccess")
+    protected int health = 5;
     
     /**
      * this is literally only for the runner, man
@@ -42,6 +44,7 @@ public class Bee {
         name = n;
         strength = rand.nextInt(101);
         intelligence = rand.nextInt(101);
+        
     }
     
     /**
@@ -116,8 +119,9 @@ public class Bee {
                         System.out.printf("OK! Here are your bees stats:" +
                                         "\n\tName: %s" +
                                         "\n\tIntelligence: %d" +
-                                        "\n\tStrength: %d",
-                                bee.name, bee.intelligence, bee.strength);
+                                        "\n\tStrength: %d" +
+                                        "\n\tHealth: %d",
+                                bee.name, bee.intelligence, bee.strength, bee.health);
     
                         break;
                     case "N":
@@ -169,7 +173,9 @@ public class Bee {
         executor.shutdown();
     }
     
-    // in this event, your bee dies. how sad.
+    /**
+     *in this event, your bee dies. how sad.
+     */
     @SuppressWarnings("WeakerAccess")
     protected void event1(Bee bee) {
         System.out.println("\n\n~~bzzzz bzzzz~~" +
@@ -193,8 +199,12 @@ public class Bee {
                         break;
                 } //switch statements are all that ever bring me joy anymore.
                 
-                System.out.println("\nSorry, you are dead.\n\nThank you for playing!");
-                System.exit(1); //code has exited with no errors
+                if (bee.health-- == 0) {
+                    System.out.println("\nSorry, you are dead.\n\nThank you for playing!");
+                    System.exit(1); //code has exited with no errors
+                } else {
+                    System.out.printf("Your health bar has ~~taken a hit~~! You only have %d healths left.", bee.health);
+                }
     
             default:   //either "Y", "y", or invalid answer
                 if (!(input.equals("Y") || input.equals("y")))
@@ -208,9 +218,14 @@ public class Bee {
                 if (bee.strength >= 50)
                     System.out.println("Good thing you're so strong! You ate that bee!");
                 else {
-                    System.out.println("\nSorry, he ate you. You're dead." +
-                            "\n\nThank you for playing!");
-                    System.exit(1);
+                    if (bee.health-- == 0) {
+                        System.out.println("\nSorry, he ate you. You're dead." +
+                                "\n\nThank you for playing!");
+                        System.exit(1);
+                    } else {
+                        System.out.printf("\nYour health bar has ~~taken a hit!~~ You now only have %d healths left.", bee.health);
+                    }
+                    
                     break;
                 }
         }
@@ -226,6 +241,8 @@ public class Bee {
         System.out.println("\n\nYour beekeeper, Mr. Passres, noticed you were a little under the weather recently.");
         
         //TODO: make this code more readable pls
+        //TODO: how about no.
+        
         boolean b = rand.nextBoolean();
         System.out.println(b ? "You have gotten a boost to your intelligence!" : "You have gotten a boost to your strength!");
         int boost = b ? bee.intelligence++ : bee.strength++;
@@ -238,7 +255,9 @@ public class Bee {
         System.out.printf("Your new stats are: \n\tIntelligence: %d \n\tStrength: %d", bee.intelligence, bee.strength);
     }
     
-    //you encounter someone trying to take your honey in this event
+    /**
+     *  you encounter someone trying to take your honey in this event
+     */
     @SuppressWarnings("WeakerAccess")
     //TODO: finish event plz
     protected void event3() {
