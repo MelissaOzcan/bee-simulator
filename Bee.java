@@ -231,6 +231,7 @@ public class Bee {
         int boost = b ? bee.intelligence++ : bee.strength++;
         
         //the max values are 100
+        //if ur value was already 100, sorry.
         bee.intelligence = bee.intelligence % 100;
         bee.strength = bee.strength % 100;
     
