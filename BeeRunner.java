@@ -54,7 +54,7 @@ public class BeeRunner {
                     bee.event0();
                     break;
                 case 1:
-                    bee.event1();
+                    bee.event1(bee);
                     break;
                 case 2:
                     bee.event2(bee);
@@ -63,7 +63,7 @@ public class BeeRunner {
                     bee.event3();
                     break;
                 case 4:
-                    bee.event4();
+                    bee.event4(bee);
                     break;
             }
             numOfRounds++;

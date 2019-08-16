@@ -273,6 +273,7 @@ public class Bee {
                         "\nSorry, you are dead." +
                         "\n\nThank you for playing!");
                 System.exit(1);
+                break;
     
                 //also includes "N" and "n"
             default:
@@ -280,6 +281,7 @@ public class Bee {
                     System.out.println("An invalid answer? Ok, seems you wont be stingin anyone today.");
     
                 //TODO: think of something.
+                break;
         }
     
     }
@@ -288,10 +290,25 @@ public class Bee {
      * in this event, you are sprayed with pesticides and either your intelligence or strength go down
      */
     @SuppressWarnings("WeakerAccess")
-    protected void event4() {
-        System.out.println("welcome to event 4");
+    protected void event4(Bee bee) {
+        System.out.println("\n\nWow, what a cool lookin garden over there! Seems you wanna go check it out!" +
+                "\nOh no! You were sprayed with pesticides!");
+    
+        //TODO: make this code more readable pls
+        //TODO: how about no.
+    
+        boolean b = rand.nextBoolean();
+        System.out.println(b ? "You have taken a hit to your intelligence!" : "You have taken a hit to your strength!");
+        int boost = b ? bee.intelligence-- : bee.strength--;
+    
+        //the max values are 100
+        //if ur value was already 100, sorry.
+        bee.intelligence = bee.intelligence % 100;
+        bee.strength = bee.strength % 100;
+    
+        System.out.printf("Your new stats are: \n\tIntelligence: %d \n\tStrength: %d", bee.intelligence, bee.strength);
     
     }
 }
 
-//is this code too long????
+//is this code too long???? seperate files?????
