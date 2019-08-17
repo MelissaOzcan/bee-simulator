@@ -4,6 +4,7 @@ package bee;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Timer;
+import bee.event.*;
 
 public class BeeRunner {
     
@@ -48,10 +49,11 @@ public class BeeRunner {
                 }
             }
             
+            //TODO: make all the events match event0
             //decides which event will be played!
             switch (rand.nextInt(5)) {
                 case 0:
-                    bee.event0();
+                    new event0();
                     break;
                 case 1:
                     bee.event1(bee);
