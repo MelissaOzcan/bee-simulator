@@ -139,41 +139,8 @@ public class Bee {
     
     }
     
-    
     //TODO: move the events into their own separate files
-    
-    //TODO: please finish this event it was going so well
-    
-    /**
-     * in this event, the bee encounters a bear in its beehive.
-     * User has 5 seconds to decide if bee flies away or stays.
-     */
-  /*  @SuppressWarnings("WeakerAccess")
-    protected void event0() {
-        
-        // REFERENCE: https://stackoverflow.com/questions/2258066/java-run-a-function-after-a-specific-number-of-seconds
-        // When your program starts up
-        ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
-
-// then, when you want to schedule a task
-        /*
-        ~~the code that the lambda expression replaced~~
-        
-         Runnable task = new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("Time is up!");
-            }
-        };
-         */
-  /*
-        Runnable task = () -> System.out.println("Time is up!"); //this is a lambda expression?!?
-        executor.schedule(task, 5, TimeUnit.SECONDS);
-
-// and finally, when your program wants to exit
-        executor.shutdown();
-    }
-    */
+   
     /**
      *in this event, your bee dies. how sad.
      */
