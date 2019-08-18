@@ -1,2 +1,2 @@
-# help-me-please
-i tried my best
+# bee simulator
+made during summer of 2019
