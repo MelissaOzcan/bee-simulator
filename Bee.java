@@ -141,68 +141,9 @@ public class Bee {
     
     //TODO: move the events into their own separate files
    
-    /**
-     *in this event, your bee dies. how sad.
-     */
-    @SuppressWarnings("WeakerAccess")
-    protected void event1(Bee bee) {
-        System.out.println("\n\n~~bzzzz bzzzz~~" +
-                "\nOh look! Is that your queen bee flying by? It is! Would you like to bzzzz over to her? (Y/N)");
-        
-        String input = in.next();
-        
-        switch (input) {
-            case "N":
-            case "n":
-                int r = rand.nextInt(3);
-                switch (r) {
-                    case 0:
-                        System.out.println("\nWhile flying away from your queen bee, you accidentally flew into a bear's mouth.");
-                        break;
-                    case 1:
-                        System.out.println("\nYou decided to bzzzz over to a flower that sadly had pesticides in it.");
-                        break;
-                    case 2:
-                        System.out.println("\nWhile flying away, you bumped into a human that decided to wack you with their shoe.");
-                        break;
-                } //switch statements are all that ever bring me joy anymore.
-                
-                if (bee.health-- == 0) {
-                    System.out.println("\nSorry, you are dead.\n\nThank you for playing!");
-                    System.exit(1); //code has exited with no errors
-                } else {
-                    System.out.printf("Your health bar has ~~taken a hit~~! You only have %d healths left.", bee.health);
-                }
-    
-            default:   //either "Y", "y", or invalid answer
-                if (!(input.equals("Y") || input.equals("y")))
-                    System.out.printf("Wow! What an invalid answer! Your answer was %s. I'm just flying you over anyways :)", input);
-        
-                //TODO: make more outcomes (random generation)
-        
-                System.out.println("\nYou are flying over to your one and only queen bee!" +
-                        "\nUnfortunately, the most buff bee in the colony also had his eyes on her...");
-                
-                if (bee.strength >= 50)
-                    System.out.println("Good thing you're so strong! You ate that bee!");
-                else {
-                    if (bee.health-- == 0) {
-                        System.out.println("\nSorry, he ate you. You're dead." +
-                                "\n\nThank you for playing!");
-                        System.exit(1);
-                    } else {
-                        System.out.printf("\nYour health bar has ~~taken a hit!~~ You now only have %d healths left.", bee.health);
-                    }
-                    
-                    break;
-                }
-        }
-    
-    }
-    
     
     /**
-     * in this event, mr. respass cares for you and either your strength or intelligence go up
+     * in this event, mr. respass cares for you and either your strength or intelligence go up.
      */
     @SuppressWarnings("WeakerAccess")
     protected void event2(Bee bee) {

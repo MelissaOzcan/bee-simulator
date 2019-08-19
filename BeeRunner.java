@@ -56,7 +56,7 @@ public class BeeRunner {
                     new event0();
                     break;
                 case 1:
-                    bee.event1(bee);
+                    new event1();
                     break;
                 case 2:
                     bee.event2(bee);
