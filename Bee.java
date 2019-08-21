@@ -19,14 +19,10 @@ public class Bee {
     private Scanner in = new Scanner(System.in);
     private Timer timer = new Timer();
     
-    @SuppressWarnings("WeakerAccess")
-    protected String name; // <= 12 chars
-    @SuppressWarnings("WeakerAccess")
-    protected int strength; //between 0 and 100
-    @SuppressWarnings("WeakerAccess")
-    protected int intelligence; //between 0 and 100
-    @SuppressWarnings("WeakerAccess")
-    protected int health = 5;
+    private String name; // <= 12 chars
+    private int strength; //between 0 and 100
+    private int intelligence; //between 0 and 100
+    private int health = 5;
     
     /**
      * this is literally only for the runner, man
@@ -140,7 +136,7 @@ public class Bee {
     }
     
     //TODO: move the events into their own separate files
-   
+    
     
     /**
      * in this event, mr. respass cares for you and either your strength or intelligence go up.
@@ -165,7 +161,7 @@ public class Bee {
     }
     
     /**
-     *  you encounter someone trying to take your honey in this event
+     * you encounter someone trying to take your honey in this event
      */
     @SuppressWarnings("WeakerAccess")
     //TODO: finish event plz
@@ -184,7 +180,7 @@ public class Bee {
                 System.exit(1);
                 break;
     
-                //also includes "N" and "n"
+            //also includes "N" and "n"
             default:
                 if (!(input.equals("N") || input.equals("n")))
                     System.out.println("An invalid answer? Ok, seems you wont be stingin anyone today.");
@@ -218,6 +214,25 @@ public class Bee {
         System.out.printf("Your new stats are: \n\tIntelligence: %d \n\tStrength: %d", bee.intelligence, bee.strength);
     
     }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public int getStrength() {
+        return strength;
+    }
+    
+    public int getIntelligence() {
+        return intelligence;
+    }
+    
+    public int getHealth() {
+        return health;
+    }
+    
+    public void decHealth() {
+        health--;
+    }
 }
-
 //is this code too long???? seperate files?????
