@@ -9,10 +9,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-//TODO:
-//TODO:
-//TODO: make it so that you have a heatlh bar so that the bee doesn't die so quickly
-
 @SuppressWarnings("WeakerAccess")
 public class Bee {
     private Random rand = new Random();
@@ -54,7 +50,6 @@ public class Bee {
     
     /**
      * method that makes the bee the user is playing with.
-     *
      * @return the bee!
      */
     @SuppressWarnings("WeakerAccess")
@@ -137,29 +132,6 @@ public class Bee {
     
     //TODO: move the events into their own separate files
     
-    
-    /**
-     * in this event, mr. respass cares for you and either your strength or intelligence go up.
-     */
-    @SuppressWarnings("WeakerAccess")
-    protected void event2(Bee bee) {
-        System.out.println("\n\nYour beekeeper, Mr. Passres, noticed you were a little under the weather recently.");
-        
-        //TODO: make this code more readable pls
-        //TODO: how about no.
-        
-        boolean b = rand.nextBoolean();
-        System.out.println(b ? "You have gotten a boost to your intelligence!" : "You have gotten a boost to your strength!");
-        int boost = b ? bee.intelligence++ : bee.strength++;
-        
-        //the max values are 100
-        //if ur value was already 100, sorry.
-        bee.intelligence = bee.intelligence % 100;
-        bee.strength = bee.strength % 100;
-    
-        System.out.printf("Your new stats are: \n\tIntelligence: %d \n\tStrength: %d", bee.intelligence, bee.strength);
-    }
-    
     /**
      * you encounter someone trying to take your honey in this event
      */
@@ -211,7 +183,7 @@ public class Bee {
         bee.intelligence = bee.intelligence % 100;
         bee.strength = bee.strength % 100;
     
-        System.out.printf("Your new stats are: \n\tIntelligence: %d \n\tStrength: %d", bee.intelligence, bee.strength);
+        System.out.printf("Your new stats are: \n\tIntelligence: %d \n\tStrength: %d", bee.getIntelligence(), bee.getStrength());
     
     }
     
@@ -219,20 +191,36 @@ public class Bee {
         return name;
     }
     
+    
     public int getStrength() {
         return strength;
     }
+    
+    public void modStrength(int i) {
+        strength += i;
+        strength = strength % 100;
+        
+    }
+    
     
     public int getIntelligence() {
         return intelligence;
     }
     
+    public void modIntelligence(int i) {
+        intelligence += i;
+        intelligence = intelligence % 100;
+        
+    }
+    
+    
     public int getHealth() {
         return health;
     }
     
-    public void decHealth() {
-        health--;
+    public void modHealth(int i) {
+        health+= i;
     }
 }
+
 //is this code too long???? seperate files?????

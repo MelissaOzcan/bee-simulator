@@ -20,7 +20,7 @@ public class BeeRunner {
         System.out.println();
     
         Bee bee = new Bee();
-        bee = bee.generateBee();    //TODO: should the generateBee code go in the runner? feels like a runner type of ting ngl
+        bee = bee.generateBee();
         
         System.out.println("\nYay! Your bee is all generated and ready to play!");
         
@@ -59,7 +59,7 @@ public class BeeRunner {
                     new event1();
                     break;
                 case 2:
-                    bee.event2(bee);
+                    new event2();
                     break;
                 case 3:
                     bee.event3();
