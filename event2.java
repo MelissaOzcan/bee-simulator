@@ -26,7 +26,7 @@ public class event2 {
             bee.modStrength(rand.nextInt(5));
         } else { //if (i == 2)
             System.out.println("You have gotten a boost to your health!");
-            bee.modHealth();
+            bee.modHealth(1);
         }
         
         System.out.printf("Your new stats are: \n\tIntelligence: %d \n\tStrength: %d \n\tHealth: %d", bee.getIntelligence(), bee.getStrength(), bee.getHealth());
