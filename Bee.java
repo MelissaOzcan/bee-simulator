@@ -102,8 +102,8 @@ public class Bee {
                 bee = new Bee(n);
                 
                 System.out.println("\nWould you like to hear your bees stats? (Y/N)");
-                String ss = in.nextLine();
-    
+                String ss = in.next();
+                
                 switch (ss) {
                     case "Y":
                     case "y":
@@ -117,10 +117,10 @@ public class Bee {
                         break;
                     case "N":
                     case "n":
-                        System.out.println("Very cool. Live your bee-st life.");
+                        System.out.println("\nVery cool. Live your bee-st life.");
                         break;
                     default:
-                        System.out.println("Wow! I sure love an invalid answer. No stats for you!!!");
+                        System.out.println("\nWow! I sure love an invalid answer. No stats for you!!!");
                         break;
                 }
                 break;
@@ -131,61 +131,6 @@ public class Bee {
     }
     
     //TODO: move the events into their own separate files
-    
-    /**
-     * you encounter someone trying to take your honey in this event
-     */
-    @SuppressWarnings("WeakerAccess")
-    //TODO: finish event plz
-    protected void event3() {
-        System.out.println("\n\n~~bzzzzzz bzzzzzz~~" +
-                "Oh no! You spot a human tryna take ur hunney! Do you sting them? (Y/N)");
-        String input = in.nextLine();
-        
-        switch (input) {
-            case ("Y"):
-            case ("y"):
-                System.out.println("\nDid you know that by stinging something, you die?" +
-                        "\nWell, now you do." +
-                        "\nSorry, you are dead." +
-                        "\n\nThank you for playing!");
-                System.exit(1);
-                break;
-    
-            //also includes "N" and "n"
-            default:
-                if (!(input.equals("N") || input.equals("n")))
-                    System.out.println("An invalid answer? Ok, seems you wont be stingin anyone today.");
-    
-                //TODO: think of something.
-                break;
-        }
-    
-    }
-    
-    /**
-     * in this event, you are sprayed with pesticides and either your intelligence or strength go down
-     */
-    @SuppressWarnings("WeakerAccess")
-    protected void event4(Bee bee) {
-        System.out.println("\n\nWow, what a cool lookin garden over there! Seems you wanna go check it out!" +
-                "\nOh no! You were sprayed with pesticides!");
-    
-        //TODO: make this code more readable pls
-        //TODO: how about no.
-    
-        boolean b = rand.nextBoolean();
-        System.out.println(b ? "You have taken a hit to your intelligence!" : "You have taken a hit to your strength!");
-        int boost = b ? bee.intelligence-- : bee.strength--;
-    
-        //the max values are 100
-        //if ur value was already 100, sorry.
-        bee.intelligence = bee.intelligence % 100;
-        bee.strength = bee.strength % 100;
-    
-        System.out.printf("Your new stats are: \n\tIntelligence: %d \n\tStrength: %d", bee.getIntelligence(), bee.getStrength());
-    
-    }
     
     public String getName() {
         return name;

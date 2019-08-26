@@ -48,24 +48,25 @@ public class BeeRunner {
                         break;
                 }
             }
+    
+            new event1().event1(bee);
             
-            //TODO: make all the events match event0
             //decides which event will be played!
             switch (rand.nextInt(5)) {
                 case 0:
                     new event0();
                     break;
                 case 1:
-                    new event1();
+                    new event1().event1(bee);
                     break;
                 case 2:
                     new event2();
                     break;
                 case 3:
-                    bee.event3();
+                    new event3();
                     break;
                 case 4:
-                    bee.event4(bee);
+                    new event4();
                     break;
             }
             numOfRounds++;
