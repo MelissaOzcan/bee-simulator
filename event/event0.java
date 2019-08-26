@@ -12,7 +12,9 @@ public class event0 {
      * User has 5 seconds to decide if bee flies away or stays.
      */
     @SuppressWarnings("WeakerAccess")
-    public void event0() {
+    public static void main(String[] args) {
+    
+        System.out.println("welcome to event 0");
         
         // REFERENCE: https://stackoverflow.com/questions/2258066/java-run-a-function-after-a-specific-number-of-seconds
         // When your program starts up
