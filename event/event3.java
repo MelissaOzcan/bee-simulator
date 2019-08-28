@@ -30,7 +30,7 @@ public class event3 {
                 if (!(input.equals("N") || input.equals("n")))
                     System.out.println("An invalid answer? Ok, seems you wont be stingin anyone today.");
                 
-                //TODO: think of something.
+                //TODO: think of something
                 break;
         }
         
