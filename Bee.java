@@ -115,10 +115,12 @@ public class Bee {
                                 bee.name, bee.intelligence, bee.strength, bee.health);
     
                         break;
+                        
                     case "N":
                     case "n":
                         System.out.println("\nVery cool. Live your bee-st life.");
                         break;
+                        
                     default:
                         System.out.println("\nWow! I sure love an invalid answer. No stats for you!!!");
                         break;
