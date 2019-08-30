@@ -1,2 +1,2 @@
 # bee simulator
-made during summer of 2019
+made during the summer of 2019
