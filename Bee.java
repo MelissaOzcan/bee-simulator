@@ -132,7 +132,6 @@ public class Bee {
     
     }
     
-    //TODO: move the events into their own separate files
     
     public String getName() {
         return name;
