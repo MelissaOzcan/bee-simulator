@@ -16,7 +16,6 @@ public class event1 {
         
         System.out.println("\n\n~~bzzzz bzzzz~~" +
                 "\nOh look! Is that your queen bee flying by? It is! Would you like to bzzzz over to her? (Y/N)");
-        
         String input = in.next();
         
         String[] scenarios = {
