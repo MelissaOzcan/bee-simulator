@@ -22,7 +22,7 @@ public class event3 {
                         "\nWell, now you do." +
                         "\nSorry, you are dead." +
                         "\n\nThank you for playing!");
-                System.exit(1);  
+                System.exit(1);
                 break;
             
             //also includes "N" and "n"
@@ -30,7 +30,7 @@ public class event3 {
                 if (!(input.equals("N") || input.equals("n")))
                     System.out.println("An invalid answer? Ok, seems you wont be stingin anyone today.");
                 
-                //TODO: think of something
+               new event2();
                 break;
         }
         
