@@ -22,7 +22,7 @@ public class event3 {
                         "\nWell, now you do." +
                         "\nSorry, you are dead." +
                         "\n\nThank you for playing!");
-                System.exit(1);
+                System.exit(1);  
                 break;
             
             //also includes "N" and "n"
