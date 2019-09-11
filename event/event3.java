@@ -14,7 +14,7 @@ public class event3 {
         System.out.println("\n\n~~bzzzzzz bzzzzzz~~" +
                 "Oh no! You spot a human tryna take ur hunney! Do you sting them? (Y/N)");
         String input = in.nextLine();
-        
+         
         switch (input) {
             case ("Y"):
             case ("y"):
