@@ -13,7 +13,7 @@ public class event2 {
     protected void event2(Bee bee) {
         Random rand = new Random();
         Scanner in = new Scanner(System.in);
-        
+         
         System.out.println("\n\nYour beekeeper, Mr. Passres, noticed you were a little under the weather recently.");
         
         int i = rand.nextInt(3);
