@@ -13,7 +13,7 @@ public class event4 {
         Random rand = new Random();
         
         System.out.println("\n\nWow, what a cool lookin garden over there! Seems you wanna go check it out!" +
-                "\nOh no! You were sprayed with pesticides! ");
+                "\nOh no! You were sprayed with pesticides!  ");
     
         int i = rand.nextInt(3);
     
