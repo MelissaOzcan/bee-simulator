@@ -17,6 +17,7 @@ public class event4 {
     
         int i = rand.nextInt(3);
     
+        
         if (i == 0) {
             System.out.println("You have taken a hit to your intelligence!");
             bee.modIntelligence(rand.nextInt(5) * -1);
