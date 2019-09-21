@@ -30,6 +30,5 @@ public class event2 {
         }
         
         System.out.printf("Your new stats are: \n\tIntelligence: %d \n\tStrength: %d \n\tHealth: %d", bee.getIntelligence(), bee.getStrength(), bee.getHealth());
-    }
-    
+    } 
 }
