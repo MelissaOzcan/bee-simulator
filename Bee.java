@@ -103,7 +103,7 @@ public class Bee {
                 
                 System.out.println("\nWould you like to hear your bees stats? (Y/N)");
                 String ss = in.next();
-                 
+                
                 switch (ss) {
                     case "Y":
                     case "y":
