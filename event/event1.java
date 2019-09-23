@@ -20,7 +20,7 @@ public class event1 {
         
         String[] scenarios = {
                 "\nWhile flying away from your queen bee, you accidentally flew into a bear's mouth.",
-                "\nYou decided to bzzzz over to a flower that sadly had pesticides in it.", 
+                "\nYou decided to bzzzz over to a flower that sadly had pesticides in it.",
                 "\nWhile flying away, you bumped into a human that decided to wack you with their shoe."
         };
         
