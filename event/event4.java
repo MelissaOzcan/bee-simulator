@@ -15,7 +15,7 @@ public class event4 {
         System.out.println("\n\nWow, what a cool lookin garden over there! Seems you wanna go check it out!" +
                 "\nOh no! You were sprayed with pesticides!  ");
     
-        int i = rand.nextInt(3);
+        int i = rand.nextInt(4);
     
         
         if (i == 0) {
@@ -24,9 +24,12 @@ public class event4 {
         } else if (i == 1) {
             System.out.println("You have taken a hit to your strength!");
             bee.modStrength(rand.nextInt(5) * -1);
-        } else { //if (i == 2)
+        } else if (i == 2) {
             System.out.println("You have taken a hit to your health!");
             bee.modHealth(-1);
+        }
+        else {
+            System.out.println("You have escaped unscathed. Don't expect this next time.");
         }
     
         System.out.printf("Your new stats are: \n\tIntelligence: %d \n\tStrength: %d \n\tHealth: %d", bee.getIntelligence(), bee.getStrength(), bee.getHealth());
