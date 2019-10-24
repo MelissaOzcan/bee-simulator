@@ -15,20 +15,19 @@ public class event4 {
         System.out.println("\n\nWow, what a cool lookin garden over there! Seems you wanna go check it out!" +
                 "\nOh no! You were sprayed with pesticides!  ");
     
-        int i = rand.nextInt(4);
+        int i = rand.nextInt(10);
     
-        //TODO: make the events not the same probability
-        if (i == 0) {
+        if (i <= 4) {
             System.out.println("You have taken a hit to your intelligence!");
             bee.modIntelligence(rand.nextInt(5) * -1);
-        } else if (i == 1) {
+        } else if (i <= 7) {
             System.out.println("You have taken a hit to your strength!");
             bee.modStrength(rand.nextInt(5) * -1);
-        } else if (i == 2) {
+        } else if (i <= 9) {
             System.out.println("You have taken a hit to your health!");
             bee.modHealth(-1);
         }
-        else {
+        else { //if i==10
             System.out.println("You have escaped unscathed. Don't expect this next time.");
         }
     
