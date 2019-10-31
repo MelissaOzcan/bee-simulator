@@ -1,5 +1,5 @@
 # bee simulator
 made during the summer/year of 2019
-07/25/2019 - present 
+07/25/2019 - 10/30/2019
 
 basically this is just a bee game
