@@ -10,7 +10,6 @@ import java.util.Timer;
 public class Bee {
     private Random rand = new Random();
     private Scanner in = new Scanner(System.in);
-    private Timer timer = new Timer();
     
     private String name; // <= 12 chars
     private int strength; //between 0 and 100
@@ -20,10 +19,8 @@ public class Bee {
     /**
      * this is literally only for the runner, man
      */
-    @SuppressWarnings("WeakerAccess")
-    //https://stackoverflow.com/questions/41716196/how-to-disable-access-can-be-package-private-message-in-intellij
+    @SuppressWarnings("WeakerAccess") //https://stackoverflow.com/questions/41716196/how-to-disable-access-can-be-package-private-message-in-intellij
     protected Bee() {
-    
     }
     
     /**
@@ -33,7 +30,6 @@ public class Bee {
         name = n;
         strength = rand.nextInt(101);
         intelligence = rand.nextInt(101);
-        
     }
     
     /**
