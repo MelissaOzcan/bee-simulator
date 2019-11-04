@@ -138,7 +138,6 @@ public class Bee {
     public void modStrength(int i) {
         strength += i;
         strength = strength % 100;
-        
     }
     
     
@@ -149,7 +148,6 @@ public class Bee {
     public void modIntelligence(int i) {
         intelligence += i;
         intelligence = intelligence % 100;
-        
     }
     
     
@@ -161,5 +159,3 @@ public class Bee {
         health+= i;
     }
 }
-
-//is this code too long???? separate files?????
