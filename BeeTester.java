@@ -13,6 +13,8 @@ public class BeeTester {
         
         //TODO: test event1
         
+        //TODO: why don't we test all the events
+        
         //https://stackoverflow.com/questions/6415728/junit-testing-with-simulated-user-input
         /*
         
