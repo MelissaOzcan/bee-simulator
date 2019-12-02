@@ -71,7 +71,7 @@ public class Bee {
             case ("N"):
             case ("n"):
                 System.out.println("\nPlease enter a value from 0-100 for the strength and one for the intelligence," +
-                        "seperated by a space.");
+                        "separated by a space.");
                 int s = in.nextInt();
                 int i = in.nextInt();
                 while (s > 100 || s < 0) {
