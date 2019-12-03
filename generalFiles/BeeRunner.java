@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.Timer;
 import bee.event.*;
 
-public class BeeRunner {
+public class BeeRunner { 
     
     public static void main(String[] args) {
     
