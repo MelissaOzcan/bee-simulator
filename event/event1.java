@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class event1 {
     /**
-     * in this event, your bee dies. how sad.
+     * in this event, your bee dies. how sad. 
      */
     @SuppressWarnings("WeakerAccess")
     public void event1(Bee bee) {
