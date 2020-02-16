@@ -7,22 +7,21 @@ import java.util.Scanner;
 
 public class event1 {
     /**
-     * in this event, your bee dies. how sad.
+     * in this event, your bee might die. how sad.
      */
     @SuppressWarnings("WeakerAccess")
     public void event1(Bee bee) {
         Random rand = new Random();
         Scanner in = new Scanner(System.in);
-        
-        System.out.println("\n\n~~bzzzz bzzzz~~" +
-                "\nOh look! Is that your queen bee flying by? It is! Would you like to bzzzz over to her? (Y/N) ");
-        String input = in.next();
-        
         String[] scenarios = {
                 "\nWhile flying away from your queen bee, you accidentally flew into a bear's mouth.",
                 "\nYou decided to bzzzz over to a flower that sadly had pesticides in it.",
                 "\nWhile flying away, you bumped into a human that decided to wack you with their shoe."
         };
+        
+        System.out.println("\n\n~~bzzzz bzzzz~~" +
+                "\nOh look! Is that your queen bee flying by? It is! Would you like to bzzzz over to her? (Y/N) ");
+        String input = in.next();
         
         switch (input) {
             case "N":
