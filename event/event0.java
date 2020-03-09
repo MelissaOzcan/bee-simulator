@@ -5,7 +5,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class event0 {
-    //TODO: please finish this event it was going so well
+    //TODO: please finish this event
     
     /**
      * in this event, the bee encounters a bear in its beehive.
