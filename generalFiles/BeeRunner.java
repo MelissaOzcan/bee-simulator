@@ -8,6 +8,8 @@ import bee.event.*;
 
 public class BeeRunner {
     
+    //TODO: we need the game to have an actual goal
+    
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         Timer timer = new Timer();
