@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public class event3 {
     /**
-     * you encounter someone trying to take your honey in this event
+     * You encounter someone trying to take your honey in this event.
      */
-    @SuppressWarnings("WeakerAccess")
     //TODO: finish event plz
+
+    @SuppressWarnings("WeakerAccess")
     protected void event3() {
         Scanner in = new Scanner(System.in);
         
