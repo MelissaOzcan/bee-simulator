@@ -2,7 +2,7 @@
 began during the summer of 2019
 ///// UNFINISHED /////
 
-basically this is just a bee game
+a written console random-event game.
 
 you are a bee, you bzzz around until you die. have fun. 
    
