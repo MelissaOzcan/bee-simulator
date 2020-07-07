@@ -1,6 +1,7 @@
 # bee simulator
-began during the summer of 2019
+
 ///// UNFINISHED /////
+began during the summer of 2019
 
 
 a written console random-event game, no graphics.
