@@ -1,6 +1,7 @@
 package bee;
-//Hi! This code is for playing the bee game! have fun!
-
+/**
+  Hi! This code is for playing the bee game! have fun!
+**/
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Timer;
