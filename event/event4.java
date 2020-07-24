@@ -11,7 +11,7 @@ public class event4 {
     @SuppressWarnings("WeakerAccess")
     protected void event4(Bee bee) {
         Random rand = new Random();
-        
+         
         System.out.println("\n\nWow, what a cool lookin garden over there! Seems you wanna go check it out!" +
                 "\nOh no! You were sprayed with pesticides!  ");
     
