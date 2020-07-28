@@ -1,6 +1,6 @@
 package bee;
 // Welcome to the bee simulator!!!!
-// Coded by Melissa Ozcan on 07/27/2019 - {end date}
+// Coded by Melissa Ozcan on 07/27/2019 
 
 import java.util.Random;
 import java.util.Scanner;
